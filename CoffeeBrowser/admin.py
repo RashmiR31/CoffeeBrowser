@@ -14,7 +14,7 @@ class ExportAdmin(admin.ModelAdmin):
 
 @admin.register(Country)
 class CountryAdmin(admin.ModelAdmin):
-    pass
+    list_display= ['name']
 
 @admin.register(Types)
 class TypesAdmin(admin.ModelAdmin):
