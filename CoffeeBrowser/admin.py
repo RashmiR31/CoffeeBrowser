@@ -4,12 +4,12 @@ from . models import Import,Export,Country,Types
 
 @admin.register(Import)
 class ImportAdmin(admin.ModelAdmin):
-    #list_display = ['Country_ID','Type_ID','Total Charges']
+    list_display = ['country_id','type_id','I_total_charges']
     pass
 
 @admin.register(Export)
 class ExportAdmin(admin.ModelAdmin):
-    #list_display = ['Country_ID','Type_ID','Total Charges']
+    list_display = ['country_id','type_id','E_total_charges']
     pass
 
 @admin.register(Country)
