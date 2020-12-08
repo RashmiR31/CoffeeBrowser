@@ -14,7 +14,6 @@ class Country(models.Model):
 class Import(models.Model):
     country_id = models.ForeignKey(Country, on_delete=models.CASCADE)
     type_id = models.ForeignKey(Types, on_delete=models.CASCADE)
-    #type_name = models.ForeignKey(Types.Coffee_name, on_delete=models.CASCADE)
     I_coffeerate = models.DecimalField(max_digits=15,decimal_places=4)
     I_rate_in_INR = models.DecimalField(max_digits=15,decimal_places=4)
     I_customduty_charges = models.DecimalField(max_digits=15,decimal_places=4)
@@ -23,7 +22,6 @@ class Import(models.Model):
 class Export(models.Model):
     country_id = models.ForeignKey(Country, on_delete=models.CASCADE)
     type_id = models.ForeignKey(Types, on_delete=models.CASCADE)
-    #type_name = models.ForeignKey(Types.Coffee_name, on_delete=models.CASCADE)
     E_coffeerate = models.DecimalField(max_digits=15,decimal_places=4)
     E_rate_in_INR = models.DecimalField(max_digits=15,decimal_places=4)
     E_IGST = models.DecimalField(max_digits=15,decimal_places=4)
