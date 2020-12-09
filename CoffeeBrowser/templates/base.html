@@ -38,10 +38,10 @@
           {% block active_about %}{% endblock %}
             <a class="nav-link" href="http://127.0.0.1:8000/about/">About</a>
           </li>
-          <li class="nav-item">
+          {% block active_imports %}{% endblock %}
             <a class="nav-link" href="http://127.0.0.1:8000/imports">IMPORTS</a>
           </li>
-          <li class="nav-item">
+          {% block active_exports %}{% endblock %}
             <a class="nav-link" href="http://127.0.0.1:8000/exports">EXPORTS</a>
           </li>
         </ul>
