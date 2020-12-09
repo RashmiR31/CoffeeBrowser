@@ -29,19 +29,20 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+          {% block active_home %}{% endblock %}
+            <a class="nav-link" href="http://127.0.0.1:8000">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+
+          {% block active_about %}{% endblock %}
+            <a class="nav-link" href="http://127.0.0.1:8000/about/">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="http://127.0.0.1:8000/imports">IMPORTS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="http://127.0.0.1:8000/exports">EXPORTS</a>
           </li>
         </ul>
       </div>

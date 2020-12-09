@@ -14,3 +14,7 @@ def imports(request):
 def exports(request):
     return render(request,'exports.html',{})
 
+def about(request):
+    return render(request,'about.html',{})
+
+

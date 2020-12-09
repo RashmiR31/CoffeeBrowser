@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% block title %}
+About
+{% endblock %}
+{% block active_about %}
+<li class="nav-item active">
+{% endblock %}
+{% block content %}
+
+
+<style>
+.heading{
+	font-family:"arial";
+	font-size: 80px;
+	font-weight:bold;
+	color:black;
+    padding-top:20px;
+}
+.line{
+    width:600px;
+}
+.subh{
+	font-family:'arial',sans-serif;
+	font-size: 40px;
+	font-weight:bold;
+	color:#fa0404;
+}
+.details{
+    font-weight:bold;
+    text-align: center;
+    
+}
+.name{
+    font-family:'roman',serif;
+    font-size:30px;
+    font-weight:bold;
+    text-align:left;
+    color:black;
+    padding-left:20px;
+}
+.head{
+    color:rgb(250, 4, 4);
+    font-size:40px;
+    padding-top:25px;
+    padding-left:10px;
+}
+.topic{
+     font-size:30px;
+     font-weight:bolder;
+     padding-left:10px;
+}
+.sub{
+    font-size:23px;
+    font-weight:bold;
+    color:blueviolet;
+    padding-left:10px;
+}
+.text{
+    font-weight:bold;
+    padding-left:10px;
+    font-size:18px;
+}
+</style>
+<html>
+    <body>
+       <center><h1  class ="heading">About Us</h1><hr class = "line">
+        <h4 class ="subh">Database Managment System</h4>
+        <span class = "details">(CSE 5th SEM 3rd Year)</span></br></br>
+       
+</center>
+    <p class="head">Coffee Import and Export Managment System</p>
+    <div>
+        <p class ="topic">1. INTRODUCTION</p>
+        <P class = "sub">1.1 INDUSTRY PROFILE</P>
+<P class = "text">Import and export trade today affects almost every person in the world. Imports and exports
+enable each country to make the best use of its most abundant resources. By exporting its
+surplus, whether raw materials such as coal, semi-finished products such as cotton stuffs, or
+finished products such as computers, a country earns the money to import another nation's
+surplus. Import-export trade involves the building of offices or plants in foreign countries,
+sending technical or other specialists abroad, and expanding the distribution of a product into
+the international market.</P>
+<P class = "sub">1.2 PROJECT CATEGORY</P>
+<P class = "text">DBMS/ Web Application/ Import and Export event systems</P>
+ 
+ 
+<P class = "topic">2. METHODOLOGY:</P>
+<P class = "sub">2.1 PROBLEM</P>
+<UL><div class = "text">
+<LI>Certain rules are controlled by its respective countries.</LI>
+<Li> Availability of data of coffee beans in different countries</LI>
+    <LI>Countries which import coffee beans , their tarrifs and permissions.</LI>
+    <LI>Export of Coffee beans from India, permissions and types</LI>
+        <LI>Export can be done to the selected countries wherever Government of India permits.</LI>
+</UL></div>
+
+<P class = "sub">2.2. WHY IS THIS PROBLEM SIGNIFICANT / NEED FOR THE STUDY</P>
+
+<p class = "text"> Since the import and export business have now become very easy and common, there
+still exists certain strict principles to be followed while trying to export or import an
+item. People need to know about the types of coffee beans available to import or
+export and its licenses. In order to not indulge in any unethical trading without the
+knowledge of it. Our team is taking up Coffee beans product and giving the entire
+details related to trading of it.</p>
+
+
+<p class = "sub">2.3. DATABASE METHODOLOGY</p>
+
+<p class = "text">In the database, there exists 4 tables for each of the Coffee beans. The interrelation between the
+tables gives the entire details of trading. Example: Coffee type: Robusta Coffee consists of 4
+tables namely ITEM, FOREIGN_Trade, LOCAL_Trade, and COUNTRIES, which have suitable
+attributes such as Grade of the coffee bean, minimum bags per shipment, product_id, X works
+price, Haulage, FOB charges, Customs Clearance , Currency etc.,
+The similar is available for another type of Coffee beans: Arabica Coffee. This gives the
+knowledge and the charges that costs up while importing and exporting the product. There are 2
+major tables, one for import and the other for export.</p>
+
+<p class = "topic">3. TOOLS TO BE USED:</p>
+<ul><div class = "text">
+<li>DATABASE – SQLite Browser</li>
+<li>Web Application – HTML5/CSS3/Bootstrap4/JQuery/Python- Django</li>
+<li>Website -<a href =" https://www.indiantradeportal.in/ "> https://www.indiantradeportal.in/ </a> for reference</li>
+</ul></div>
+ 
+<p class = "topic">4. EXPECTED RESULTS OF THE STUDY:</p>
+<p class = "text">In business trend, the end user must get the best quality coffee from the country of his choice at
+best possible rate. He must be able to gain instant access to the data provided in the database
+through a user-friendly interface created as web application.</p>
+
+    </div>
+    <h4 class = "subh">Team:</h4>
+    <div class ="name">
+        <p>Rashmi R (1AM18CS138)</p>
+    <p>S K Vinay (1AM18CS140)</p>
+    <p>Subramanya K (1AM18CS168)</p>
+    <p>Saif Katingeri (1AM18CS146)</p>
+</div>
+ </body>
+</html>
+{% endblock %}
