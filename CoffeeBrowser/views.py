@@ -6,7 +6,7 @@ from . models import Import,Export
 
 def home(request):
     imports = Import.objects.all()
-    return render(request,'home.html',{'imports':imports})
+    return render(request,'home.html',{})
 
 def imports(request):
     return render(request,'imports.html',{})
