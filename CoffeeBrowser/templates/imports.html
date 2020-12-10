@@ -6,5 +6,11 @@ Imports
 <li class="nav-item active">
 {% endblock %}
 {% block content %}
-Welcome to Imports Page
+<table class="table table-bordered">
+    {% for ctry in imports %}
+    <tr>
+        <td>{{ctry.country_id}}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
