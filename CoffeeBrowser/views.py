@@ -5,14 +5,15 @@ from . models import Import,Export
 
 
 def home(request):
-    imports = Import.objects.all()
     return render(request,'home.html',{})
 
 def imports(request):
-    return render(request,'imports.html',{})
+    imports = Import.objects.all()
+    return render(request,'imports.html',{'imports':imports})
 
 def exports(request):
-    return render(request,'exports.html',{})
+    exports = Export.objects.all()
+    return render(request,'exports.html',{'exports':exports})
 
 def about(request):
     return render(request,'about.html',{})
