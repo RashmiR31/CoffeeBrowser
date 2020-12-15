@@ -43,6 +43,7 @@ Imports
                     <label for="coffee_type">Coffee type:</label>
                     
                     <select name = "coffee_type" id="coffee_type">
+                        <option>SELECT</option>
                         {% for ty in typess %}
                         <option value ="">{{ty.Coffee_name}}</option>
                         {% endfor %}
