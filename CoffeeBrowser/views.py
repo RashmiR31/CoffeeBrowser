@@ -8,15 +8,21 @@ def home(request):
     return render(request,'home.html',{})
 
 def imports(request):
-    imports = Import.objects.all()
+    n=4
+    t=1
+    imports = Import.objects.raw(f"SELECT CoffeeBrowser_import.id,CoffeeBrowser_country.name,Coffee_name,I_coffeerate,I_rate_in_INR,I_customduty_charges,I_total_charges FROM CoffeeBrowser_import,CoffeeBrowser_types,CoffeeBrowser_country WHERE CoffeeBrowser_country.id={n} AND CoffeeBrowser_types.id={t} AND CoffeeBrowser_import.country_id_id={n} AND CoffeeBrowser_import.type_id_id={t}")
     countrys = Country.objects.all()
     typess = Types.objects.all()
-    return render(request,'imports.html',{'countrys':countrys,'imports':imports,'typess':typess})
+    return render(request,'imports.html',{'imports':imports,'countrys':countrys,'typess':typess})
 
 
 def exports(request):
-    exports = Export.objects.all()
-    return render(request,'exports.html',{'exports':exports})
+    n=23
+    t=1
+    exports = Export.objects.raw(f"SELECT CoffeeBrowser_export.id,CoffeeBrowser_country.name,Coffee_name,E_coffeerate,E_rate_in_INR,E_total_charges,E_IGST,E_shipping_charges FROM CoffeeBrowser_export,CoffeeBrowser_types,CoffeeBrowser_country WHERE CoffeeBrowser_country.id={n} AND CoffeeBrowser_types.id={t} AND CoffeeBrowser_export.country_id_id={n} AND CoffeeBrowser_export.type_id_id={t}")
+    countrys = Country.objects.all()
+    typess = Types.objects.all()
+    return render(request,'exports.html',{'exports':exports,'countrys':countrys,'typess':typess})
 
 def about(request):
     return render(request,'about.html',{})
