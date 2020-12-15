@@ -6,11 +6,55 @@ Imports
 <li class="nav-item active">
 {% endblock %}
 {% block content %}
-<table class="table table-bordered">
-    {% for ctry in imports %}
-    <tr>
-        <td>{{ctry.country_id}}</td>
-    </tr>
-    {% endfor %}
-</table>
+<script>
+    $(function() {
+      $( "#valida_desde" ).datepicker();
+    });
+    </script>
+<style>
+.head{
+    font-size:50px;
+    text-align:center;
+    font-family:'Applegothic',sans-serif;
+    font-weight:bolder;
+}
+.dropdown{
+    padding-top:50px;
+    padding-left:50px;
+    font-size:25px;
+}
+</style>
+<html>
+    <body>
+        <h1 class = "head">IMPORT COFFEE</h1>
+              <form>
+                <div class="fieldWrapper">
+                    {{ form.valida_desde.errors }}
+                <div class ="dropdown">
+                <label for="Country">Country:</label>
+
+                <select name="country" id="country">
+                    <option>SELECT</option>
+                    {% for ctry in countrys %}
+                 <option value="">{{ctry.name}}</option>
+                    {% endfor %}
+                </select>
+                
+                    <label for="coffee_type">Coffee type:</label>
+                    
+                    <select name = "coffee_type" id="coffee_type">
+                        {% for ty in typess %}
+                        <option value ="">{{ty.Coffee_name}}</option>
+                        {% endfor %}
+                </select>
+            
+                <label for ="no_of_bags" >No. of Bags</label>
+                    <input  style ="width:100px" type ="number">
+                    
+                </div>
+                </div>
+        </form>
+    </body>
+</html>
 {% endblock %}
+

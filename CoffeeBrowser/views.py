@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . models import Import,Export
+from . models import Import,Export,Country,Types
 # Create your views here.
 
 
@@ -9,7 +9,10 @@ def home(request):
 
 def imports(request):
     imports = Import.objects.all()
-    return render(request,'imports.html',{'imports':imports})
+    countrys = Country.objects.all()
+    typess = Types.objects.all()
+    return render(request,'imports.html',{'countrys':countrys,'imports':imports,'typess':typess})
+
 
 def exports(request):
     exports = Export.objects.all()
