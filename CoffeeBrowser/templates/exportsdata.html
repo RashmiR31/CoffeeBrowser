@@ -5,7 +5,7 @@ Invoice
 {% block content %}
 <h1>{{country}}</h1>
 <h3>{{coffee}}</h3>
-{% for c in imports %}
+{% for c in exports %}
 <table class="table table-bordered">
     {% csrf_token %}
     <tr>
@@ -15,16 +15,19 @@ Invoice
         <td>Country name: {{c.name}}</td>
     </tr>
     <tr>
-        <td>Coffee Rate in $: {{c.I_coffeerate}}</td>
+        <td>Coffee Rate in $: {{c.E_coffeerate}}</td>
     </tr>
     <tr>
-        <td>Coffee Rate in INR: {{c.I_rate_in_INR}}</td>
+        <td>Coffee Rate in INR: {{c.E_rate_in_INR}}</td>
     </tr>
     <tr>
-        <td>Custom duty charges: {{c.I_customduty_charges}}</td>
+        <td>Custom duty charges: {{c.E_IGST}}</td>
     </tr>  
     <tr>   
-        <td>Total Charges in INR: {{c.I_total_charges}}</td>
+        <td>Shipping Charges: {{c.E_shipping_charges}}</td>
+    </tr>
+    <tr>   
+        <td>Total charges in INR: {{c.E_total_charges}}</td>
     </tr>
     <tr>   
         <td>No of bags: {{nbags}}</td>

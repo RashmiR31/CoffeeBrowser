@@ -6,5 +6,107 @@ Exports
 <li class="nav-item active">
 {% endblock %}
 {% block content %}
-Welcome to Exports Page
-{% endblock %}
+
+<style>
+    .dropdown{
+        padding-left:50px;
+        font-size:25px;
+        margin-bottom: 20px;
+    }
+    .go{
+        padding-left:1000px;
+        margin-top:-50px;
+    }
+    
+    </style>
+    <html>
+        <!-- Header -->
+        <header class="bg-primary py-5 mb-5">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-lg-12">
+              <h1 class="display-4 text-white mt-5 mb-2">Export Coffee</h1>
+              <p class="lead mb-5 text-white">Trade your coffee at the best rate.</p>
+            </div>
+          </div>
+        </div>
+        </header>
+        <head>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        </head>
+        <body>
+            <form method="GET" action="{% url 'exportsdata' %}">
+                    <div class="fieldWrapper">
+                        {{ form.valida_desde.errors }}
+                    <div class ="dropdown">
+                    <label for="Country">Country:</label>
+    
+                    <select name="country" id="country">
+                        <option>SELECT</option>
+                        {% for ctry in countrys %}
+                     <option>{{ctry.name}}</option>
+                        {% endfor %}
+                    </select>
+                    
+                        <label for="coffee_type">Coffee type:</label>
+                        
+                        <select name = "coffee_type" id="coffee_type">
+                            <option>SELECT</option>
+                            {% for ty in typess %}
+                            <option>{{ty.Coffee_name}}</option>
+                            {% endfor %}
+                    </select>
+                    
+                    <label for ="no_of_bags" >No. of Bags</label>
+                        <input  style ="width:100px" stype ="number" name="no_of_bags">
+                        <div class = "go"><button type="submit" class="btn btn-primary">GO</button></div>
+                    </div>
+                    </div>
+                   
+            </form>
+    
+                
+        <!--.................................................................................-->
+        <hr height="50px">
+        <br>
+        <br>
+        <br>
+<h2 color="red">Statistics on Coffee</h2>
+<br>
+<h4>Production in Major States/Districts Of India(in MTs)</h4>
+
+<a href = "https://www.indiacoffee.org/Indian%20Coffee/countrywise_exports4.8Sep20.pdf" target="_blank">Exports of coffee from India 2020-2021</a>
+<br>
+<img src="C:\Users\Admin\Desktop\dbms\dbmsWebapp\CoffeeBrowser\templates\karnataka.PNG" alt="karnataka">
+<br>
+<img src="https://www.comunicaffe.com/wp-content/uploads/2015/01/Coffee-Board-Janaury-2015.jpg" alt="table of production in major states and districts of India">
+<br>
+<br>
+<img src="https://www.ethiopianimporter.com/contentimageexport/cof-g2.png" alt="image of quantity of coffee produced in India">
+<br>
+<p>
+Who is the largest exporter of coffee?<br>
+Brazil<br>
+In 2018, Brazil exported nearly four and a half billion U.S. dollars' worth of coffee to other countries, making it the world's leading coffee exporter by far.
+</p>
+               
+               
+               
+            
+            
+       <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     
+   {% endblock %}
+    </body>
+    </html>
+    
