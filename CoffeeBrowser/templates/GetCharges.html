@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+Invoice
+{% endblock %}
+{% block content %}
+{% for c in imports %}
+<table class="table table-bordered">
+    {% csrf_token %}
+    <tr>
+        <td>Coffee name: {{c.Coffee_name}}</td>
+    </tr>
+    <tr>
+        <td>Country name: {{c.name}}</td>
+    </tr>
+    <tr>
+        <td>Coffee Rate in $: {{c.I_coffeerate}}</td>
+    </tr>
+    <tr>
+        <td>Coffee Rate in INR: {{c.I_rate_in_INR}}</td>
+    </tr>
+    <tr>
+        <td>Custom duty charges: {{c.I_customduty_charges}}</td>
+    </tr>  
+    <tr>   
+        <td>Total Charges in INR: {{c.I_total_charges}}</td>
+    </tr>
+    <tr>   
+        <td>No of bags: {{nbags}}</td>
+    </tr>
+    <tr>   
+        <td>Total Charges for {{nbags}} bags in INR: {{total}}</td>
+    </tr>
+    
+</table>
+{% endfor %}
+<p>
+    
+</p>
+{% endblock %}

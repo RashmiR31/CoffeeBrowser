@@ -40,7 +40,7 @@ Imports
     
     </head>
     <body>
-              <form>
+        <form method="GET" action="{% url 'submitform' %}">
                 <div class="fieldWrapper">
                     {{ form.valida_desde.errors }}
                 <div class ="dropdown">
@@ -49,7 +49,7 @@ Imports
                 <select name="country" id="country">
                     <option>SELECT</option>
                     {% for ctry in countrys %}
-                 <option value="">{{ctry.name}}</option>
+                 <option>{{ctry.name}}</option>
                     {% endfor %}
                 </select>
                 
@@ -58,17 +58,25 @@ Imports
                     <select name = "coffee_type" id="coffee_type">
                         <option>SELECT</option>
                         {% for ty in typess %}
-                        <option value ="">{{ty.Coffee_name}}</option>
+                        <option>{{ty.Coffee_name}}</option>
                         {% endfor %}
                 </select>
-            
+                
                 <label for ="no_of_bags" >No. of Bags</label>
-                    <input  style ="width:100px" stype ="number">
-                    <div class = "go"><button>GO</button></div>
+                    <input  style ="width:100px" stype ="number" name="no_of_bags">
+                    <div class = "go"><button type="submit" class="btn btn-primary">GO</button></div>
                 </div>
                 </div>
                
         </form>
+
+            
+            
+           
+           
+           
+        
+        
    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
