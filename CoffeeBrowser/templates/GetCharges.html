@@ -3,34 +3,37 @@
 Invoice
 {% endblock %}
 {% block content %}
-<h1>{{country}}</h1>
-<h3>{{coffee}}</h3>
+<head>
+    <body>
+        <h1><center>Invoice</center></h1>
+    <h2>{{country}}/{{coffee}}</h2>
+   
 {% for c in imports %}
 <table class="table table-bordered">
     {% csrf_token %}
     <tr>
-        <td>Coffee name: {{c.Coffee_name}}</td>
+        <td>Coffee name: <b>{{c.Coffee_name}}</b></td>
     </tr>
     <tr>
-        <td>Country name: {{c.name}}</td>
+        <td>Country name:<b> {{c.name}}</b></td>
     </tr>
     <tr>
-        <td>Coffee Rate in $: {{c.I_coffeerate}}</td>
+        <td>Coffee Rate in $:<b> {{c.I_coffeerate}}</b></td>
     </tr>
     <tr>
-        <td>Coffee Rate in INR: {{c.I_rate_in_INR}}</td>
+        <td>Coffee Rate in INR:<b> {{c.I_rate_in_INR}}</b></td>
     </tr>
     <tr>
-        <td>Custom duty charges: {{c.I_customduty_charges}}</td>
+        <td>Custom duty charges:<b> {{c.I_customduty_charges}}</b></td>
     </tr>  
     <tr>   
-        <td>Total Charges in INR: {{c.I_total_charges}}</td>
+        <td>Total Charges in INR:<b> {{c.I_total_charges}}</b></td>
     </tr>
     <tr>   
-        <td>No of bags: {{nbags}}</td>
+        <td>No of bags:<b> {{nbags}}</b></td>
     </tr>
     <tr>   
-        <td>Total Charges for {{nbags}} bags in INR: {{total}}</td>
+        <td>Total Charges for {{nbags}} bags in INR:<b> {{total}}</b></td>
     </tr>
     
 </table>
@@ -38,4 +41,6 @@ Invoice
 <p>
     
 </p>
+</body>
+</head>
 {% endblock %}
