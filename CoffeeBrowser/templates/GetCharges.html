@@ -3,6 +3,8 @@
 Invoice
 {% endblock %}
 {% block content %}
+<h1>{{country}}</h1>
+<h3>{{coffee}}</h3>
 {% for c in imports %}
 <table class="table table-bordered">
     {% csrf_token %}

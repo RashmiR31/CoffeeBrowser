@@ -48,5 +48,5 @@ def submitform(request):
     charges = Import.objects.filter(country_id_id = c, type_id_id = t).values_list('I_total_charges',flat=True)
     charge = charges[0]
     total = nbags*charge
-    return render(request,'GetCharges.html',{'imports':imports,'total':total,'nbags':nbags})
+    return render(request,'GetCharges.html',{'imports':imports,'total':total,'nbags':nbags,'country':country,'coffee':coffee})
 
