@@ -24,4 +24,5 @@ urlpatterns = [
     path('exports/',views.exports,name='exports'),
     path('about/',views.about,name='about'),
     path('submitform/',views.submitform,name="submitform"),
+    path('exportsdata/',views.exportsdata,name="exportsdata")
 ]
