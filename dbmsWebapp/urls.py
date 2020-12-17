@@ -23,4 +23,5 @@ urlpatterns = [
     path('imports/',views.imports,name='imports'),
     path('exports/',views.exports,name='exports'),
     path('about/',views.about,name='about'),
+    path('submitform/',views.submitform,name="submitform"),
 ]
