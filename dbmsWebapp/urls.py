@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from CoffeeBrowser import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,3 +27,4 @@ urlpatterns = [
     path('submitform/',views.submitform,name="submitform"),
     path('exportsdata/',views.exportsdata,name="exportsdata")
 ]
+
