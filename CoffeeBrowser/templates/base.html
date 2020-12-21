@@ -1,4 +1,51 @@
 <!DOCTYPE html>
+<style>
+  .dropbtn {
+  background-color: #3498DB;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+</style>
 <html lang="en">
 
 <head>
@@ -46,8 +93,39 @@
 
             <a class="nav-link" href="http://127.0.0.1:8000/admin">Admin</a>
           </li>
+          {% if user.is_authenticated %}
+          </li>
+          <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">{{user.username}}</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="http://127.0.0.1:8000/accounts/logout">Log out</a>
+            </div>
+          </div>
+          <script>
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+              document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+              if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+            </script>
+          {% else %}
             <a class="nav-link" href ="http://127.0.0.1:8000/accounts/login"><button class ="btn btn-primary" style="margin-top:-5px">Login</button></a>
-        </ul>
+            {% endif %}
+          </ul>
       </div>
     </div>
   </nav>
