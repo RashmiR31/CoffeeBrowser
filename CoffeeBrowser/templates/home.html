@@ -73,7 +73,11 @@ Home
             <p class="card-text">Import the best quality coffee from any bestowed country.</p>
           </div>
           <div class="card-footer">
+            {% if user.is_authenticated %}
             <a href="http://127.0.0.1:8000/imports/" class="btn btn-primary">Find Out More!</a>
+            {% else %}
+            <a href="http://127.0.0.1:8000/accounts/login/" class="btn btn-danger">Sign in to Find Out More!</a>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -85,7 +89,11 @@ Home
             <p class="card-text">Know about the pricing that costs you while exporting your branded coffee to other countries.</p>
           </div>
           <div class="card-footer">
+            {% if user.is_authenticated %}
             <a href="http://127.0.0.1:8000/exports/" class="btn btn-primary">Find Out More!</a>
+            {% else %}
+            <a href="http://127.0.0.1:8000/accounts/login/" class="btn btn-danger">Sign in to Find Out More!</a>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -97,7 +105,11 @@ Home
             <p class="card-text">Right or Wrong? Questions on licences and permissions answered here.</p>
           </div>
           <div class="card-footer">
+            {% if user.is_authenticated %}
             <a href="https://www.indiacoffee.org/Exporter.aspx" target="_blank" class="btn btn-primary">Find Out More!</a>
+            {% else %}
+            <a href="http://127.0.0.1:8000/accounts/login/" class="btn btn-danger">Sign in to Find Out More!</a>
+            {% endif %}
           </div>
         </div>
       </div>
