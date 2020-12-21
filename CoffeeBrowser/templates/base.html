@@ -81,12 +81,14 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
+          {% if user.is_authenticated %}
           {% block active_imports %}{% endblock %}
             <a class="nav-link" href="http://127.0.0.1:8000/imports">IMPORTS</a>
           </li>
           {% block active_exports %}{% endblock %}
             <a class="nav-link" href="http://127.0.0.1:8000/exports">EXPORTS</a>
           </li>
+          {% endif %}
           {% block active_about %}{% endblock %}
             <a class="nav-link" href="http://127.0.0.1:8000/about/">About</a>
           </li>
