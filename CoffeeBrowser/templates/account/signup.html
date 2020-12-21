@@ -1,18 +1,49 @@
 {% load socialaccount %}
-<style>
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+
+<style>
+    .title{
+        font-family:fantasy;
+        color:blue;
+        padding-top:20px;
+    }
+    .link{
+        margin-top:50px;
+        color:black;
+    }
+    .fm{
+        width:400px;
+        padding-left:20px;
+    }
+ 
+    
 </style>
 <html>
     <body>
-<h1>Register</h1>
+        <center>
+        <h1 class ="title">Register</h1>
+        <h6 class ="link">Registered Already??Then please <a href="{{ login_url }}">sign in</a></h6>
+        
+           <div class ="fm">
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+   
+            <input type="text" class="form-control" style="margin-top:30px;height:50px;" name="Name" placeholder="Username"value="" required>
 
-<p> <a href="{{ login_url }}">sign in</a></p>
+            <input type="email" class="form-control" style="margin-top:10px;height:50px;" name="email"placeholder="Email" value="" required>    
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            <input type="password" class="form-control" style="margin-top:10px;height:50px;" name="password" placeholder="Password" value="" required>
+                 
+            <input type="password" class="form-control" style="margin-top:10px;height:50px;" name="password(again)" placeholder="Password(again)" value="">
 
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            <button class ="btn btn-primary btn-lg" style="margin-top:20px;height=40px" type="submit"> Register</button>
 
-  <button type="submit">&raquo;</button>
-</form>
+            <p class="mt-5 mb-3 text-muted" style="text-align: left;">&copy; 2020</p>
+
+        </form>
+    </div>
+</center> 
 </body>
 </html>
