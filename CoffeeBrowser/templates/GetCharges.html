@@ -3,44 +3,68 @@
 Invoice
 {% endblock %}
 {% block content %}
+<style>
+    .adjust{
+        width:50%;
+        padding-left:20px;
+        padding-top:20px;
+    }
+    .adj{
+        padding-left:20px;
+    }
+    .b{
+        padding-left:100px;
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+    @media print {
+  .hidden-print {
+    display: none !important;
+  }
+}
+</style>
 <head>
     <body>
-        <h1><center>Invoice</center></h1>
-    <h2>{{country}}/{{coffee}}</h2>
+        <h1><center>Imports Invoice</center></h1>
+    <h2 class = "adj">{{country}}/{{coffee}}</h2>
    
 {% for c in imports %}
+<div class ="adjust">
 <table class="table table-bordered">
     {% csrf_token %}
     <tr>
-        <td>Coffee name: <b>{{c.Coffee_name}}</b></td>
+        <td>Coffee name:</td> <td><b>{{c.Coffee_name}}</b></td>
     </tr>
     <tr>
-        <td>Country name:<b> {{c.name}}</b></td>
+        <td>Country name:</td><td><b> {{c.name}}</b></td>
     </tr>
     <tr>
-        <td>Coffee Rate in $:<b> {{c.I_coffeerate}}</b></td>
+        <td>Coffee Rate in $: </td><td><b> {{c.I_coffeerate}}</b></td>
     </tr>
     <tr>
-        <td>Coffee Rate in INR:<b> {{c.I_rate_in_INR}}</b></td>
+        <td>Coffee Rate in INR:</td><td><b> {{c.I_rate_in_INR}}</b></td>
     </tr>
     <tr>
-        <td>Custom duty charges:<b> {{c.I_customduty_charges}}</b></td>
+        <td>Custom duty charges:</td><td><b> {{c.I_customduty_charges}}</b></td>
     </tr>  
     <tr>   
-        <td>Total Charges in INR:<b> {{c.I_total_charges}}</b></td>
+        <td>Total Charges in INR:</td><td><b> {{c.I_total_charges}}</b></td>
     </tr>
     <tr>   
-        <td>No of bags:<b> {{nbags}}</b></td>
+        <td>No of bags:</td><td><b> {{nbags}}</b></td>
     </tr>
     <tr>   
-        <td>Total Charges for {{nbags}} bags in INR:<b> {{total}}</b></td>
+        <td>Total Charges for {{nbags}} bags in INR:</td><td><b> {{total}}</b></td>
     </tr>
     
+
 </table>
+</div>
 {% endfor %}
-<p>
-    
-</p>
+<footers><div class ="b hidden-print"><center>
+<input type="button" class="btn btn-primary" value="Print" onClick="window.print()">
+</div></center>
+</footers>
 </body>
 </head>
 {% endblock %}
