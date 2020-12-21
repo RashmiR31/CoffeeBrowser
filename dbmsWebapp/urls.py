@@ -14,8 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from CoffeeBrowser import views
+from django.views.generic import TemplateView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
@@ -25,6 +26,7 @@ urlpatterns = [
     path('exports/',views.exports,name='exports'),
     path('about/',views.about,name='about'),
     path('submitform/',views.submitform,name="submitform"),
-    path('exportsdata/',views.exportsdata,name="exportsdata")
+    path('exportsdata/',views.exportsdata,name="exportsdata"),
+    path('accounts/', include('allauth.urls')),
 ]
 
