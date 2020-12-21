@@ -1,0 +1,18 @@
+{% load socialaccount %}
+<style>
+
+</style>
+<html>
+    <body>
+<h1>Register</h1>
+
+<p> <a href="{{ login_url }}">sign in</a></p>
+
+<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+
+  <button type="submit">&raquo;</button>
+</form>
+</body>
+</html>
