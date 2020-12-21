@@ -22,10 +22,11 @@
     
 </style>
 <html>
+    <title>signup</title>
     <body>
         <center>
         <h1 class ="title">Register</h1>
-        <h6 class ="link">Registered Already??Then please <a href="{{ login_url }}">sign in</a></h6>
+        <h4 class ="link">Registered Already??Then please <a href="{{ login_url }}">sign in</a></h4>
         
            <div class ="fm">
         <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
@@ -38,7 +39,7 @@
                  
             <input type="password" class="form-control" style="margin-top:10px;height:50px;" name="password(again)" placeholder="Password(again)" value="">
 
-            <button class ="btn btn-primary btn-lg" style="margin-top:20px;height=40px" type="submit"> Register</button>
+            <button class ="btn btn-primary btn-lg" style="margin-top:20px;height:40px" type="submit"> Register</button>
 
             <p class="mt-5 mb-3 text-muted" style="text-align: left;">&copy; 2020</p>
 
