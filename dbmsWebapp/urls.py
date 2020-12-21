@@ -27,7 +27,6 @@ urlpatterns = [
     path('about/',views.about,name='about'),
     path('submitform/',views.submitform,name="submitform"),
     path('exportsdata/',views.exportsdata,name="exportsdata"),
-    path('index/',TemplateView.as_view(template_name='index.html')),
     path('accounts/', include('allauth.urls')),
 ]
 
