@@ -1,12 +1,19 @@
-{% load socialaccount %}
+{% load i18n %}
+
+
+{% block content %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 <html>
     <title>Logout</title>
     <body>
     <center><h1 style="margin-top: 50px;">Log Out</h1>
+    <form method="POST" action="{% url 'account_logout' %}">
+    {% csrf_token %}
     <h3 style="padding-top: 200px;">Are you sure you want to Sign Out?</h3>
-    <button class ="btn btn-danger" type="submit">Sign Out</button>
+    <button class ="btn btn-danger" type="submit">{% trans 'Sign Out' %}</button>
+    </form>
         </center>
     </body>
         </html>
+{% endblock %}
