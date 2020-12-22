@@ -19,10 +19,11 @@
  
     
 </style>
-{% block content %}
+
 <html>
     <title>SignUp</title>
     <body>
+        {% block content %}
         <center>
         <h1 class ="title">Register</h1>
         <h4 class ="link">Registered Already??Then please <a href="{{ login_url }}">sign in</a></h4>
@@ -47,6 +48,6 @@
         </form>
     </div>
 </center> 
+{% endblock %}
 </body>
 </html>
-{% endblock %}

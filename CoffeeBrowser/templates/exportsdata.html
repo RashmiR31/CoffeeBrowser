@@ -29,7 +29,11 @@ Invoice
 
 <head>
 <body>
-<h1><center>Invoice</center></h1>
+        <center>
+            <h1>Exports Invoice</h1>
+            Username: <b> {{user.username}}</b><br>
+            User ID: <b>{{user.id}}</b> 
+        </center>
 <h2 class ="adj">{{country}}/{{coffee}}</h2>
 {% for c in exports %}
 <div class = "adjust">
