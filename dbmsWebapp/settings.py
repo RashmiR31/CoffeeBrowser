@@ -87,7 +87,8 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 WSGI_APPLICATION = 'dbmsWebapp.wsgi.application'
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
