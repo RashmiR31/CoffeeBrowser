@@ -2,7 +2,8 @@
 
 {% load i18n %}
 {% load socialaccount %}
-
+{% providers_media_js %}
+{% block content %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,20 +21,27 @@
     <div class="container text-dark mt-5">
         <div class="row justify-content-md-center">
           <div class="col-md-5 bg-grey p-3">
-            <h5>Not yet Registered? <a href="http://127.0.0.1:8000/accounts/signup/">Sign Up</a></h5>
-            <form class="form-signin" >
+            <h5>Not yet Registered? <a href="{{ signup_url }}">Sign Up</a></h5>
+            <form class="login" method="POST" action="{% url 'account_login' %}" >
+              {% csrf_token %}
           <center>      <h1 class="h3 mb-3">Please Sign In...</h1></center>
                 <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <input type="username" id="inputUsername" class="form-control" placeholder="username" required autofocus>
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
                 <div class="checkbox mb-3">
                   <label>
                     <input type="checkbox" value="remember-me"> Remember me
                   </label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button class="primaryAction btn btn-lg btn-primary btn-block" type="submit">{% trans "Sign In" %}</button>
                 <a href="{% provider_login_url 'google' %}" class="btn btn btn-danger btn-lg btn-block" role="button" aria-pressed="true">Sign in with Google</a>
+                
+                
                 <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
               </form>
           </div>
@@ -47,3 +55,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
 </html>
+{% endblock %}

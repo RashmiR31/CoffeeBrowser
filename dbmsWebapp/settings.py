@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    
 ]
 
 MIDDLEWARE = [
@@ -151,5 +152,6 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS' : {
             'access_type':'online',
         }
-    }
+    },
+    
 }
