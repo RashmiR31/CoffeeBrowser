@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Import,Export,Country,Types
+from . models import Import,Export,Country,Types,Survey
 # Register your models here.
 
 @admin.register(Import)
@@ -19,3 +19,7 @@ class CountryAdmin(admin.ModelAdmin):
 @admin.register(Types)
 class TypesAdmin(admin.ModelAdmin):
     pass
+
+@admin.register(Survey)
+class SurveyAdmin(admin.ModelAdmin):
+    list_display = ['Question']

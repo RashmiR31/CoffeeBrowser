@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 
-from . models import Import,Export,Country,Types
+from . models import Import,Export,Country,Types,Survey
 # Create your views here.
 
 
@@ -19,7 +19,6 @@ def imports(request):
 
 
 def exports(request):
-    exports = Export.objects.raw(f"SELECT CoffeeBrowser_export.id,CoffeeBrowser_country.name,Coffee_name,E_coffeerate,E_rate_in_INR,E_total_charges,E_IGST,E_shipping_charges FROM CoffeeBrowser_export,CoffeeBrowser_types,CoffeeBrowser_country WHERE CoffeeBrowser_country.id=4 AND CoffeeBrowser_types.id=2 AND CoffeeBrowser_export.country_id_id=4 AND CoffeeBrowser_export.type_id_id=2")
     countrys = Country.objects.all()
     typess = Types.objects.all()
     return render(request,'exports.html',{'exports':exports,'countrys':countrys,'typess':typess})
@@ -66,3 +65,10 @@ def exportsdata(request):
     charge = charges[0]
     total = nbags*charge
     return render(request,'exportsdata.html',{'exports':exports,'coffee':coffee,'country':country,'total':total,'nbags':nbags})
+
+def survey(request):
+    surveys = Survey.objects.all()
+    return render(request,'survey.html',{'surveys':surveys})
+
+def survey_results(request):
+    return render(request,'survey_results.html',{})
