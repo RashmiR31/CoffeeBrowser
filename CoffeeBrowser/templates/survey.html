@@ -1,1 +1,24 @@
 <h1>Survey Page here!</h1>
+<html>
+<body>
+    <table>
+        {% for entry in surveys %}
+        <tr>
+            <td>{{entry.Question}}</td>
+        </tr>
+        <tr>
+            <td>{{entry.option_one}}</td>
+        </tr>
+        <tr>
+            <td>{{entry.option_two}}</td>
+        </tr>
+        <tr>
+            <td>{{entry.option_three}}</td>
+        </tr>
+        <tr>
+            <td>{{entry.option_four}}</td>
+        </tr>
+    </table>
+    {% endfor %}
+</body>
+</html>
