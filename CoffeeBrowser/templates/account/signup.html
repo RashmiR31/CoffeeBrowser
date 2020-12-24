@@ -4,20 +4,23 @@
 {% block content %}
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+<title>Register</title>
 <center>
 <h1>{% trans "Sign Up" %}</h1>
-
+<div style="margin-top:10px;">
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-
+</div>
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
-  <b>
+  <b><div style="width: 600px;text-align: left;padding-left: 120px;margin-top: 50px;font-size: 20px;font-family: Helvetica;color: black;">
   {{ form.as_p }}</b>
   {% if redirect_field_value %}
+  </div>
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button type="submit" class="btn btn-primary">{% trans "Sign Up" %} &raquo;</button>
+  <div style="padding-left: 150px;">
+  <button type="submit" style="width: 100px;" class="btn btn-primary">{% trans "Sign Up" %} &raquo;</button>
+</div>
 </form>
 </center>
 {% endblock %}
