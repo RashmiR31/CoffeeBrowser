@@ -28,5 +28,7 @@ urlpatterns = [
     path('submitform/',views.submitform,name="submitform"),
     path('exportsdata/',views.exportsdata,name="exportsdata"),
     path('accounts/', include('allauth.urls')),
+    path('survey/',views.survey,name='survey'),
+    path('survey_results/',views.survey_results,name="survey_results"),
 ]
 
