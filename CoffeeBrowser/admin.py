@@ -24,4 +24,4 @@ class TypesAdmin(admin.ModelAdmin):
 
 @admin.register(Survey)
 class SurveyAdmin(admin.ModelAdmin):
-    list_display = ['Question']
+    list_display = ['Question','option_one_count','option_two_count','option_three_count','option_four_count']
