@@ -20,7 +20,7 @@ from django.views.generic import TemplateView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('',views.home,name='home'),
     path('imports/',views.imports,name='imports'),
     path('exports/',views.exports,name='exports'),

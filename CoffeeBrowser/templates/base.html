@@ -70,40 +70,40 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="http://127.0.0.1:8000/">Import & Export - Coffee Beans</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Import & Export - Coffee Beans</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           {% block active_home %}{% endblock %}
-            <a class="nav-link" href="http://127.0.0.1:8000">Home
+            <a class="nav-link" href="{% url 'home' %}">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           {% if user.is_authenticated %}
           {% block active_imports %}{% endblock %}
-            <a class="nav-link" href="http://127.0.0.1:8000/imports">IMPORTS</a>
+            <a class="nav-link" href="{% url 'imports' %}">IMPORTS</a>
           </li>
           {% block active_exports %}{% endblock %}
-            <a class="nav-link" href="http://127.0.0.1:8000/exports">EXPORTS</a>
+            <a class="nav-link" href="{% url 'exports' %}">EXPORTS</a>
           </li>
           {% block active_survey %}{% endblock %}
-            <a class="nav-link" href="http://127.0.0.1:8000/survey">Survey</a>
+            <a class="nav-link" href="{% url 'survey' %}">Survey</a>
           </li>
           {% endif %}
           {% block active_about %}{% endblock %}
-            <a class="nav-link" href="http://127.0.0.1:8000/about/">About</a>
+            <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
 
-            <a class="nav-link" href="http://127.0.0.1:8000/admin">Admin</a>
+            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
           </li>
           {% if user.is_authenticated %}
           </li>
           <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">{{user.username}}</button>
             <div id="myDropdown" class="dropdown-content">
-              <a href="http://127.0.0.1:8000/accounts/logout">Log out</a>
+              <a href="{% url 'account_logout' %}">Log out</a>
             </div>
           </div>
           <script>
@@ -128,7 +128,7 @@
             }
             </script>
           {% else %}
-            <a class="nav-link" href ="http://127.0.0.1:8000/accounts/login"><button class ="btn btn-primary" style="margin-top:-5px">Login</button></a>
+            <a class="nav-link" href ="{% url 'account_login' %}"><button class ="btn btn-primary" style="margin-top:-5px">Login</button></a>
             {% endif %}
           </ul>
       </div>

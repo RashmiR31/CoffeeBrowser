@@ -42,7 +42,7 @@ Home
         <p>In business trend, the end user must get the best quality coffee from the country of his choice at
             best possible rate. He must be able to gain instant access to the data provided in the database
             through a user-friendly interface created as web application.</p>
-        <a class="btn btn-primary btn-lg" href="http://127.0.0.1:8000/about/">Know more &raquo;</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'about' %}">Know more &raquo;</a>
       </div>
       <div class="col-md-4 mb-5">
         <h2>Contact Us</h2>
@@ -74,9 +74,9 @@ Home
           </div>
           <div class="card-footer">
             {% if user.is_authenticated %}
-            <a href="http://127.0.0.1:8000/imports/" class="btn btn-primary">Find Out More!</a>
+            <a href="{% url 'imports' %}" class="btn btn-primary">Find Out More!</a>
             {% else %}
-            <a href="http://127.0.0.1:8000/accounts/login/" class="btn btn-danger">Sign in to Find Out More!</a>
+            <a href="{% url 'account_login' %}" class="btn btn-danger">Sign in to Find Out More!</a>
             {% endif %}
           </div>
         </div>
@@ -90,9 +90,9 @@ Home
           </div>
           <div class="card-footer">
             {% if user.is_authenticated %}
-            <a href="http://127.0.0.1:8000/exports/" class="btn btn-primary">Find Out More!</a>
+            <a href="{% url 'exports' %}" class="btn btn-primary">Find Out More!</a>
             {% else %}
-            <a href="http://127.0.0.1:8000/accounts/login/" class="btn btn-danger">Sign in to Find Out More!</a>
+            <a href="{% url 'account_login' %}" class="btn btn-danger">Sign in to Find Out More!</a>
             {% endif %}
           </div>
         </div>
@@ -108,7 +108,7 @@ Home
             {% if user.is_authenticated %}
             <a href="https://www.indiacoffee.org/Exporter.aspx" target="_blank" class="btn btn-primary">Find Out More!</a>
             {% else %}
-            <a href="http://127.0.0.1:8000/accounts/login/" class="btn btn-danger">Sign in to Find Out More!</a>
+            <a href="{% url 'account_login' %}" class="btn btn-danger">Sign in to Find Out More!</a>
             {% endif %}
           </div>
         </div>
