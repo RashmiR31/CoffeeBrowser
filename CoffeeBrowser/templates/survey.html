@@ -30,7 +30,7 @@ survey
         <div class="container h-100">
           <div class="row h-100 align-items-center">
             <div class="col-lg-12">
-              <h1 class="display-4 text-white mt-5 mb-2">Survey Form</h1>
+              <h1 class="display-4 text-white mt-5 mb-2">Feedback Form</h1>
               <p class="lead mb-5 text-white">Give us your valuable feedback here.</p>
             </div>
           </div>
@@ -48,76 +48,25 @@ survey
 <body>
     <div class ="frm">
 <form method="POST" >
+    {% for s in surveys %}
+    {% csrf_token %}
 
- <h5 class="q">What browser do you use?</h5>
+ <h5 class="q">{{s.Question}}</h5>
  <div class="a">   
-    <input type="radio" id="browser" name="browser" required><label> Chrome</label><br>
-    <input type="radio" id="browser" name="browser"><label>Firefox</label><br>
-    <input type="radio" id="browser" name="browser"><label>Safari</label><br>
-    <input type="radio" id="browser" name="browser"><label>Other</label><br>
+    <input type="radio" id="browser" name="browser" required><label>{{s.option_one}}</label><br>
+    <input type="radio" id="browser" name="browser"><label>{{s.option_two}}</label><br>
+    <input type="radio" id="browser" name="browser"><label>{{s.option_three}}</label><br>
+    <input type="radio" id="browser" name="browser"><label>{{s.option_four}}</label><br>
     </div>
+    {% endfor %}
 
-   <h5 class="q"> Which device did you use to access the website?</h5>
-   <div class="a">
-   <input type="radio" id="device" name="device" required><label>Desktop/Laptop</label><br>
-   <input type="radio" id="device" name="device"><label>Tablet</label><br>
-   <input type="radio" id="device" name="device"><label>Mobile Phone</label><br>
-   <input type="radio" id="device" name="device"><label>Other</label> <br>
-</div>
-
-    <h5 class="q">How often do you drink Coffee?</h5>
-    <div class="a">
-    <input type="radio" id="coffee" name="coffee" required><label>Daily</label><br>
-    <input type="radio" id="coffee" name="coffee"><label>Weekly Once</label><br>
-    <input type="radio" id="coffee" name="coffee"><label>Alternate days</label><br>
-    <input type="radio" id="coffee" name="coffee"><label>Never</label><br>
-    </div>
-
-    <h5 class="q">Which of the followings would influence your decision to buy a certain type of coffee?</h5>
-    <div class="a">
-    <input type="radio" id="interest" name="interest" required><label>Price</label><br>
-    <input type="radio" id="interest" name="interest"><label>Quality</label><br>
-    <input type="radio" id="interest" name="interest"><label>Brand</label><br>
-    <input type="radio" id="interest" name="interest"><label>Other</label><br>
-    </div>
-
-    <h5 class="q">Overall, how well does our website meet your needs?</h5>
-    <div class="a">
-    <input type="radio" id="overall" name="overall" required><label>Extremely well</label><br>
-    <input type="radio" id="overall" name="overall"><label>Very well</label><br>
-    <input type="radio" id="overall" name="overall"><label>Somewhat well</label><br>
-    <input type="radio" id="overall" name="overall"><label>Not at all</label><br>
-    </div>
-
-    <h5 class="q">How easy was it to find what you are looking for on our website?</h5>
-    <div class="a">
-    <input type="radio" id="items" name="items" required><label>Extremely Easy</label><br>
-    <input type="radio" id="items" name="items"><label>Very Easy</label><br>
-    <input type="radio" id="items" name="items"><label>Somewhat Easy</label><br>
-    <input type="radio" id="items" name="items"><label>Not at all Easy</label><br>
-    </div>
-
-    <h5 class="q"> How visually appealing and user-friendly is our website?</h5>
-    <div class="a">
-    <input type="radio" id="website" name="website" required><label>Extremely Appealing</label><br>
-    <input type="radio" id="website" name="website"><label>Very Appealing</label><br>
-    <input type="radio" id="website" name="website"><label>Somewhat Appealing</label><br>
-    <input type="radio" id="website" name="website"><label>Not at all Appealing</label><br>
-    </div>
-
-    <h5 class="q">How likely is that you would recommend our website to a friend or colleague?</h5>
-    <div class="a">
-    <label><input type="radio" id="recommendation" name="recommendation" required>Extremely Likely</label><br>
-    <label><input type="radio" id="recommendation" name="recommendation">Very Likely</label><br>
-    <label><input type="radio" id="recommendation" name="recommendation">Somewhat Likely</label><br>
-    <label><input type="radio" id="recommendation" name="recommendation">Not at all</label><br>
-    </div>
 
     <h5 class="q">Do you have any other suggestions on how we can improve our website?</h5>
     <textarea id="suggest"style="height:200px;width:1000px;margin-top:30px;" class="a" placeholder="Type here......"></textarea>
     
 </div>
-<center><a href="http://127.0.0.1:8000/survey_results/"><button style="margin-bottom:30px;" class="btn btn-primary">Submit</button></a></center>
+<center><a href="{% url 'survey_results' %}"><button style="margin-bottom:30px;" class="btn btn-primary">Submit</button></a></center>
 </form>
 </html>
+
 {% endblock %}
