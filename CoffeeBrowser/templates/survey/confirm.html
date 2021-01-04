@@ -1,0 +1,24 @@
+<style>
+    .t{
+        background-color:rgb(97, 247, 97);
+        font-size: 25px;
+        margin-top:30px;
+        width:723px;
+        margin-left:200px;
+        text-align: center;
+    }
+    .s{
+      font-size: 50px;
+      text-align:center;
+      font-family: Helvetica;
+    }
+</style>
+{% extends 'survey/base.html' %}
+ {% load i18n %}
+  {% block title %}{% trans "Survey submitted" %}{% endblock title %} 
+{% block body %}
+
+<div class="s">{% trans "Survey submitted!!"%}</div>
+<div class ="t">{% trans "Thanks! Your answers have been saved." %}</div>
+<center><a href="{% url 'home' %}"><button class= "btn btn-primary" style ="margin-top:20px">Home</button></a></center>
+{% endblock %}
