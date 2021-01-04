@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 
-from . models import Import,Export,Country,Types,Survey
+from . models import Import,Export,Country,Types
 # Create your views here.
 
 
@@ -66,9 +66,4 @@ def exportsdata(request):
     total = nbags*charge
     return render(request,'exportsdata.html',{'exports':exports,'coffee':coffee,'country':country,'total':total,'nbags':nbags})
 
-def survey(request):
-    surveys = Survey.objects.all()
-    return render(request,'survey.html',{'surveys':surveys})
 
-def survey_results(request):
-    return render(request,'survey_results.html',{})

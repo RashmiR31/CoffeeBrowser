@@ -88,14 +88,10 @@
           {% block active_exports %}{% endblock %}
             <a class="nav-link" href="{% url 'exports' %}">EXPORTS</a>
           </li>
-          {% block active_survey %}{% endblock %}
-            <a class="nav-link" href="{% url 'survey' %}">Survey</a>
-          </li>
           {% endif %}
           {% block active_about %}{% endblock %}
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
-
             <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
           </li>
           {% if user.is_authenticated %}

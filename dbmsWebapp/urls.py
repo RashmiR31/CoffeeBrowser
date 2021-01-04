@@ -14,10 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
 from django.urls import path, include
 from CoffeeBrowser import views
 from django.views.generic import TemplateView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls import include, url
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
@@ -28,7 +30,9 @@ urlpatterns = [
     path('submitform/',views.submitform,name="submitform"),
     path('exportsdata/',views.exportsdata,name="exportsdata"),
     path('accounts/', include('allauth.urls')),
-    path('survey/',views.survey,name='survey'),
-    path('survey_results/',views.survey_results,name="survey_results"),
+    
 ]
-
+if 'survey' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        url('survey/', include('survey.urls'))
+    ]

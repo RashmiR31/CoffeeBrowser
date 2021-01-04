@@ -28,7 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+CSV_DIRECTORY = Path("csv") # Define the directory where csv are exported
+TEX_DIRECTORY = Path("tex") # Define the directory where tex files and pdf are exported
 # Application definition
 
 INSTALLED_APPS = [
@@ -44,6 +45,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'bootstrapform',
+	'survey',
     
 ]
 

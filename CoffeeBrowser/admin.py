@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Import,Export,Country,Types,Survey
+from . models import Import,Export,Country,Types
 # Register your models here.
 
 admin.site.site_header = 'CoffeeBrowser Administration'
@@ -22,6 +22,3 @@ class CountryAdmin(admin.ModelAdmin):
 class TypesAdmin(admin.ModelAdmin):
     pass
 
-@admin.register(Survey)
-class SurveyAdmin(admin.ModelAdmin):
-    list_display = ['Question','option_one_count','option_two_count','option_three_count','option_four_count']
