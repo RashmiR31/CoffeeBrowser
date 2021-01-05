@@ -6,6 +6,9 @@ Invoice
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
+    .h{
+        margin-top:5px;
+    }
     .adjust{
         width:50%;
         padding-left:20px;
@@ -24,13 +27,18 @@ Invoice
     display: none !important;
   }
     }
+    @media screen and (max-width:420px){
+        .h{
+            margin-top: 50px;
+        }
+    }
     </style>
 
 
 <head>
 <body>
         <center>
-            <h1>Exports Invoice</h1>
+            <h1 class="h">Exports Invoice</h1>
             Username: <b> {{user.username}}</b><br>
             User ID: <b>{{user.id}}</b> 
         </center>

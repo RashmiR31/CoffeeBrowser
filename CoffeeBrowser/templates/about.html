@@ -9,6 +9,9 @@ About
 
 
 <style>
+    .wrapper{
+        width:100%;
+    }
 .heading{
 	font-family:"arial";
 	font-size: 50px;
@@ -58,9 +61,65 @@ About
     padding-left:10px;
     font-size:18px;
 }
+@media screen and (max-width:420px) {
+    .wrapper{
+        width:400px;
+    }
+    .heading{
+	font-family:"arial";
+	font-size: 25px;
+	font-weight:bold;
+	color:black;
+    padding-top:20px;
+}
+.line{
+    width:300px;
+}
+.subh{
+	font-family:'arial',sans-serif;
+	font-size: 20px;
+	color:#fa0404;
+}
+.details{
+    font-weight:bold;
+    text-align: center;
+    
+}
+.name{
+    font-family:'roman',serif;
+    font-size:12.5px;
+    text-align:left;
+    color:black;
+    padding-left:20px;
+}
+.head{
+    color:rgb(250, 4, 4);
+    font-size:20px;
+    padding-top:25px;
+    padding-left:10px;
+}
+.topic{
+     font-size:15px;
+     font-weight:bolder;
+     padding-left:10px;
+}
+.sub{
+    font-size:11.5px;
+    
+    color:blueviolet;
+    padding-left:10px;
+}
+.text{
+    
+    padding-left:10px;
+    font-size:9px;
+}
+}
+
 </style>
 <html>
     <body>
+        <div class= "wrapper">
        <center><h1  class ="heading">About Us</h1><hr class = "line">
         <h4 class ="subh">Database Managment System</h4>
         <span class = "details">(CSE 5th SEM 3rd Year)</span></br></br>
@@ -131,6 +190,7 @@ through a user-friendly interface created as web application.</p>
     <p>S K Vinay (1AM18CS140)</p>
     <p>Subramanya K (1AM18CS168)</p>
     <p>Saif Katingeri (1AM18CS146)</p>
+</div>
 </div>
  </body>
 </html>
