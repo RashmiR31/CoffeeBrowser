@@ -8,17 +8,31 @@ Exports
 {% block content %}
 
 <style>
-    .dropdown{
-        padding-left:50px;
-        font-size:25px;
-        margin-bottom: 20px;
+    .wrapper{
+        width: 100%;
+    }
+.dropdown{
+    padding-left:50px;
+    font-size:25px;
+    margin-bottom: 20px;
+}
+.dropdown2{
+    padding-left:450px;
+    font-size:25px;
+    margin-top:-65px;
+    
+}
+.dropdown3{
+    padding-left:830px;
+    font-size:25px;
+    margin-top:-50px;
     }
     .go{
-        padding-left:1000px;
+        padding-left:300px;
         margin-top:-50px;
     }
     .hs{
-    padding-top:120px;
+    padding-top:100px;
     padding-left:30px;
     font-family: Helvetica;
     font-weight: bold;
@@ -57,6 +71,64 @@ Exports
     .dk{
   background-image:url("https://ictcoffee.com/wp-content/uploads/2020/03/great-coffee-bean.jpeg");
   }
+  @media screen and (max-width:420px) {
+    .wrapper{
+        width: 400px;
+    }
+.dropdown{
+    padding-left:10px;
+    font-size:20px;
+}
+.dropdown2{
+    padding-left:10px;
+    font-size:20px;
+    margin-top: 10px;
+    
+    
+}
+.dropdown3{
+    padding-left:10px;
+    font-size:20px;
+    margin-top:20px;
+
+    }
+    .go{
+     padding-left:150px;
+        margin-top:20px;
+    }
+    .hs{
+    padding-top:120px;
+    padding-left:30px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color:rgb(143, 18, 18);
+    display:none;
+    }
+    .spac{
+        padding-left:20px;
+        margin-bottom:20px;
+        display:none;
+    }
+    
+    .h3s{
+    padding-top:20px;
+    padding-left:30px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color:blue;
+    margin-top:-200px;
+    }
+    
+    .line{
+        background-color:black;
+        height:0.5px;
+        margin-left:20px;
+        width:723px;
+        margin-top:-19px;
+        display:none;
+    }  
+  
+  }
     </style>
     <html>
         <!-- Header -->
@@ -80,8 +152,9 @@ Exports
         
         </head>
         <body>
+            <div class = "wrapper">
             <form method="GET" action="{% url 'exportsdata' %}">
-                    <div class="fieldWrapper">
+                
                         {{ form.valida_desde.errors }}
                     <div class ="dropdown">
                     <label for="Country">Country:</label>
@@ -92,7 +165,8 @@ Exports
                      <option>{{ctry.name}}</option>
                         {% endfor %}
                     </select>
-                    
+                </div>
+                <div class = "dropdown2">
                         <label for="coffee_type">Coffee type:</label>
                         
                         <select name = "coffee_type" id="coffee_type">
@@ -101,22 +175,23 @@ Exports
                             <option>{{ty.Coffee_name}}</option>
                             {% endfor %}
                     </select>
-                    
+                </div>
+                <div class ="dropdown3">
                     <label for ="no_of_bags" >No. of Bags</label>
                         <input  style ="width:100px" stype ="number" name="no_of_bags">
                         <div class = "go"><button type="submit" class="btn btn-primary">GO</button></div>
                          
                         
                     </div>
-                    </div>
+                    
                    
             </form>
-    
+    </div>
                 
         <!--.................................................................................-->
         
 
-<center><h2 class ="hs">Statistics on Coffee</h2></center>
+<center><h1 class ="hs">Statistics on Coffee</h1></center>
 <br>
 <div class ="spac">
 <h4>Production in Major States/Districts Of India(in MTs)</h4>
