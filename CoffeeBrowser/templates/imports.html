@@ -8,13 +8,27 @@ Imports
 {% block content %}
 
 <style>
+    .wrapper{
+        width: 100%;
+    }
 .dropdown{
     padding-left:50px;
     font-size:25px;
     margin-bottom: 20px;
 }
+.dropdown2{
+    padding-left:450px;
+    font-size:25px;
+    margin-top:-65px;
+    
+}
+.dropdown3{
+    padding-left:830px;
+    font-size:25px;
+    margin-top:-50px;
+    }
 .go{
-    padding-left:1000px;
+    padding-left:300px;
     margin-top:-50px;
 }
 .h3s{
@@ -85,6 +99,123 @@ Imports
 .dk{
   background-image:url("https://ictcoffee.com/wp-content/uploads/2020/03/great-coffee-bean.jpeg");
   }
+
+  @media screen and (max-width:420px){
+ .wrapper{
+     width: 320px;
+ }
+.dk{
+  background-image:url("https://ictcoffee.com/wp-content/uploads/2020/03/great-coffee-bean.jpeg");
+  
+  }   
+    .dropdown{
+    padding-left:10px;
+    font-size:20px;
+}
+    .dropdown2{
+    padding-left:10px;
+    font-size:20px;
+    margin-top:10px;
+    margin-bottom:10px;
+    
+}
+.dropdown3{
+    font-size:20px;
+    margin-top:10px;
+    padding-left:10px;
+}
+.go{
+    padding-left:100px;
+    margin-top:20px;
+
+}
+.content{
+    word-wrap:break-word;
+}
+
+.heading{
+    font-size:30px;
+    color:rgb(7, 88, 194);
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top:50px;
+    margin-left:-60px;
+}
+.img1{
+    padding-left:50px;
+    margin-top:50px;
+    
+    
+}
+.ids1{
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10%;
+    width:200px;
+    height:100px;
+
+}
+.img2{
+    padding-left:50px;
+    margin-top:25px;
+    
+}
+.ids2{
+    border-width: 1px;
+    border-style: solid;
+    width:200px;
+    height:100px;
+    border-radius: 10%;
+}
+.img3{
+    padding-left:50px;
+    margin-top: -50px;
+}
+.ids3{
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10%;
+    width:200px;
+    height:100px;
+
+}
+.img4{
+    margin-top:25px;
+    padding-left:50px;
+}
+.ids4{
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10%;
+    width:200px;
+    height:100px;
+
+}
+.subh{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:xx-large;
+}
+.block{
+    background-color: rgba(65, 65, 245, 0.322);
+    width:fit-content;
+    margin-top: 100px;
+}
+  .h3s{
+    padding-top:20px;
+    padding-left:10px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color:blue;
+    font-size:30px;
+}
+.p2{
+    padding-left:10px;
+    padding-right:30px;
+    font-size: large;
+    padding-bottom:20px;
+    font-size:12px;
+
+}
+}
 </style>
 <html>
     <!-- Header -->
@@ -108,19 +239,20 @@ Imports
     
     </head>
     <body>
+        <div class ="wrapper">
         <form method="GET" action="{% url 'submitform' %}">
-                <div class="fieldWrapper">
                     {{ form.valida_desde.errors }}
                 <div class ="dropdown">
                 <label for="Country">Country:</label>
-
-                <select name="country" id="country">
+            
+                    <select name="country" id="country">
                     <option>SELECT</option>
                     {% for ctry in countrys %}
                  <option>{{ctry.name}}</option>
                     {% endfor %}
                 </select>
-                
+            </div>
+            <div class = "dropdown2">            
                     <label for="coffee_type">Coffee type:</label>
                     
                     <select name = "coffee_type" id="coffee_type">
@@ -129,15 +261,16 @@ Imports
                         <option>{{ty.Coffee_name}}</option>
                         {% endfor %}
                 </select>
-                
+            </div>
+            <div class = "dropdown3">
                 <label for ="no_of_bags" >No. of Bags</label>
                     <input  style ="width:100px" type ="number" name="no_of_bags">
                     <div class = "go"><button type="submit" class="btn btn-primary">GO</button></div>
                     
                 </div>
-                </div>
                
         </form>
+        </div>
         <h3 class ="heading"><center>Types of Coffee</center></h3>
         <div class ="img1">
             <a href ="https://en.wikipedia.org/wiki/Coffea_canephora" style="color:rgb(61, 61, 66);" target="_blank">

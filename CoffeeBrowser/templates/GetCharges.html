@@ -4,6 +4,9 @@ Invoice
 {% endblock %}
 {% block content %}
 <style>
+    .h{
+        margin-top:5px;
+    }
     .adjust{
         width:50%;
         padding-left:20px;
@@ -22,10 +25,15 @@ Invoice
     display: none !important;
    }
 }
+@media screen and (max-width:420px){
+    .h{
+        margin-top:50px;
+    }
+}
 </style>
 <head>
     <body>
-        <center>  <h1>Imports Invoice</h1>
+        <center>  <h1 class ="h">Imports Invoice</h1>
             Username: <b> {{user.username}}</b><br>
             User ID: <b>{{user.id}}</b> 
         </center>
