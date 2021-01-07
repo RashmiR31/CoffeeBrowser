@@ -1,3 +1,72 @@
+<style>
+    .wrapper{
+        width: 100%;
+        height:auto;
+    }
+    .news{
+        margin-top:10px;
+        font-size: 50px;
+    }
+    .heading{
+             font-family:'Times New Roman', Times, serif;
+             padding-left:20px;
+             margin-top:10px;
+    }
+    .pic{
+        padding-left:20px;
+        
+    }
+    .content{
+        width:1000px;
+        height:auto;
+        margin-top:-180px;
+        padding-left:300px;
+        margin-bottom:100px;
+        margin-bottom:50px;
+    }
+    .publish{
+        
+        font-family:Arial, Helvetica, sans-serif;
+       margin-top: 130px;
+       padding-left:20px;
+    }
+    @media screen and (max-width:420px){
+        .wrapper{
+        width: 360px;
+        height:auto;
+    }
+    .news{
+        margin-top:50px;
+    }
+    .heading{
+             font-family:'Times New Roman', Times, serif;
+             padding-left:20px;
+             margin-top:10px;
+             width:360px;
+    }
+    .pic{
+        padding-left:20px;
+        
+    }
+    .content{
+        width:1000px;
+        height:auto;
+        margin-top:20px;
+        margin-left: -280px;
+        width:600px;
+        font-size: 14px;
+
+       
+    }
+    .publish{
+        
+        font-family:Arial, Helvetica, sans-serif;
+       margin-top: 1px;
+       padding-left:20px;
+    }
+    
+    }
+    </style>
 {% extends 'base.html' %}
 {% block title %}
 News
@@ -5,16 +74,23 @@ News
 {% block active_news %}
 <li class="nav-item active">
 {% endblock %}
-
 <!--NEWS STARTS HERE-->
+<html>
+    <body>
+        
 {% block content %}
+<div class= "wrapper">
+<center><h1 class ="news">News</h1></center>
 {% for article in articles %}
-<h2>{{article.title}}</h2>
-{{article.description}}
-<a href="{{article.url}}" target="_blank">Read more..</a>
+<h2 class ="heading">{{article.title}}</h2>
+<div class="pic"><img src="{{article.urlToImage}}" alt="Image url" width="250px" height="200px"><br></div>
+<div class="content">{{article.description}}
+<a href="{{article.url}}" target="_blank">Read more..</a></div>
+<div class = "publish"> Published: {{article.publishedAt}} <hr></div>
 <br>
-<img src="{{article.urlToImage}}" alt="Image url" width="100px" height="100px"><br>
-Published: {{article.publishedAt}}
-<hr>
+</div>
+
 {% endfor %}
 {% endblock %}
+</body>
+</html>
