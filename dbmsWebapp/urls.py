@@ -30,6 +30,7 @@ urlpatterns = [
     path('submitform/',views.submitform,name="submitform"),
     path('exportsdata/',views.exportsdata,name="exportsdata"),
     path('accounts/', include('allauth.urls')),
+    path('news/',views.news,name='news'),
     
 ]
 if 'survey' in settings.INSTALLED_APPS:

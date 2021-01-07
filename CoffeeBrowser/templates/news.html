@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+News
+{% endblock %}
+{% block active_news %}
+<li class="nav-item active">
+{% endblock %}
+
+<!--NEWS STARTS HERE-->
+{% block content %}
+{% for article in articles %}
+<h2>{{article.title}}</h2>
+{{article.description}}
+<a href="{{article.url}}" target="_blank">Read more..</a>
+<br>
+<img src="{{article.urlToImage}}" alt="Image url" width="100px" height="100px"><br>
+Published: {{article.publishedAt}}
+<hr>
+{% endfor %}
+{% endblock %}

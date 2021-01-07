@@ -88,6 +88,9 @@
           {% block active_exports %}{% endblock %}
             <a class="nav-link" href="{% url 'exports' %}">EXPORTS</a>
           </li>
+          {% block active_news %}{% endblock %}
+            <a class="nav-link" href="{% url 'news' %}">NEWS</a>
+          </li>
           {% endif %}
           {% block active_about %}{% endblock %}
             <a class="nav-link" href="{% url 'about' %}">About</a>

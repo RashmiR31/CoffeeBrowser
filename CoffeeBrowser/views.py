@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 
 from . models import Import,Export,Country,Types
+import requests
+
 # Create your views here.
 
 
@@ -66,4 +68,11 @@ def exportsdata(request):
     total = nbags*charge
     return render(request,'exportsdata.html',{'exports':exports,'coffee':coffee,'country':country,'total':total,'nbags':nbags})
 
+def news(request):
+    url = ('https://newsapi.org/v2/everything?q=coffee&apiKey=7f195f18af1f455e88501f29096a6839')
+    response = requests.get(url)
+    
+    data = response.json()
+    articles = data['articles']
 
+    return render(request,'news.html',{"articles":articles})
