@@ -21,15 +21,15 @@ Invoice
         padding-bottom:20px;
     }
     @media print {
-  .hidden-print {
-    display: none !important;
-   }
-}
-@media screen and (max-width:420px){
-    .h{
-        margin-top:50px;
+        .hidden-print {
+            display: none !important;
+        }
     }
-}
+    @media screen and (max-width:420px){
+        .h{
+            margin-top:50px;
+        }
+    }
 </style>
 <head>
     <body>
@@ -71,12 +71,13 @@ Invoice
 
 </table>
 </div>
-{% endfor %}
-<footers><div class ="b hidden-print"><center>
-<input type="button" class="btn btn-primary" value="Print" onClick="window.print()">
-<a href="http:127.0.0.1:8000/survey/1"><button class="btn btn-success">Feedback</button></a>
-</div></center>
-</footers>
+% endfor %}
+    <footers>
+        <div class ="b hidden-print"><center>
+            <input type="button" class="btn btn-primary" value="Print" onClick="window.print()">
+            <a href="http:127.0.0.1:8000/survey/1"><button class="btn btn-success">Feedback</button></a>
+        </div></center>
+    </footers>
 </body>
 </head>
 {% endblock %}

@@ -8,12 +8,12 @@
     <title>Logout</title>
     <body>
     <center><h1 style="margin-top: 50px;">Log Out</h1>
-    <form method="POST" action="{% url 'account_logout' %}">
-    {% csrf_token %}
-    <h3 style="padding-top: 200px;">Are you sure you want to Sign Out?</h3>
-    <button class ="btn btn-danger" type="submit">{% trans 'Sign Out' %}</button>
-    </form>
-        </center>
+        <form method="POST" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            <h3 style="padding-top: 200px;">Are you sure you want to Sign Out?</h3>
+            <button class ="btn btn-danger" type="submit">{% trans 'Sign Out' %}</button>
+        </form>
+    </center>
     </body>
-        </html>
+</html>
 {% endblock %}

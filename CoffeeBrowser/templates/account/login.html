@@ -3,7 +3,7 @@
 {% providers_media_js %}
 {% block content %}
 <!doctype html>
-<html lang="en">
+<html>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,37 +19,35 @@
     <div class="container text-dark mt-5">
         <div class="row justify-content-md-center">
             <form class="login" style=
-            "width:450px" method="POST" action="{% url 'account_login' %}" >
+             "width:450px" method="POST" action="{% url 'account_login' %}" >
               {% csrf_token %}
-          <center>      <h1 class="h3 mb-3">Please Sign In...</h1>
-            <div class=" bg-grey p-3">
-              <h5>Not yet Registered? <a href="{{ signup_url }}">Sign Up</a></h5>
-          </div>  
-          </center>
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="username" id="inputUsername" class="form-control" placeholder="username" required autofocus>
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <div class="checkbox mb-3" style="margin-top: 10px;">
-                 <b> <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                  </label></b>
-                
+              <center>
+                <h1 class="h3 mb-3">Please Sign In...</h1>
+                <div class=" bg-grey p-3">
+                  <h5>Not yet Registered? <a href="{{ signup_url }}">Sign Up</a></h5>
+                </div>  
+              </center>
+              <label for="inputEmail" class="sr-only">Email address</label>
+              <input type="username" id="inputUsername" class="form-control" placeholder="username" required autofocus>
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              <div class="checkbox mb-3" style="margin-top: 10px;">
+                <b> <label>
+                <input type="checkbox" value="remember-me"> Remember me
+                </label></b>
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
                 <div style="margin-top: 20px;">
-                <a href="{% url 'home' %}"><button class="primaryAction btn btn-lg btn-primary btn-block" type="submit">{% trans "Sign In" %}</button></a>
-                <a href="{% provider_login_url 'google' %}" class="btn btn btn-danger btn-lg btn-block" role="button" aria-pressed="true">Sign in with Google</a>
-              </div>
+                  <a href="{% url 'home' %}"><button class="primaryAction btn btn-lg btn-primary btn-block" type="submit">{% trans "Sign In" %}</button></a>
+                  <a href="{% provider_login_url 'google' %}" class="btn btn btn-danger btn-lg btn-block" role="button" aria-pressed="true">Sign in with Google</a>
                 </div>
-              <div style="margin-top:10px;"> <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-               </div>
-                
-                <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
-              </form>
+              </div>
+              <div style="margin-top:10px;"> <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a></div>
+              <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+            </form>
+          </div>
         </div>
-      </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

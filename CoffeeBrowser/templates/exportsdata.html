@@ -23,63 +23,61 @@ Invoice
         padding-bottom:20px;
     }
     @media print {
-  .hidden-print {
-    display: none !important;
-  }
+        .hidden-print {
+            display: none !important;
+        }
     }
     @media screen and (max-width:420px){
         .h{
             margin-top: 50px;
         }
     }
-    </style>
+</style>
 
 
 <head>
 <body>
-        <center>
+    <center>
             <h1 class="h">Exports Invoice</h1>
             Username: <b> {{user.username}}</b><br>
             User ID: <b>{{user.id}}</b> 
-        </center>
-<h2 class ="adj">{{country}}/{{coffee}}</h2>
-{% for c in exports %}
-<div class = "adjust">
-<table class="table table-bordered">
-    {% csrf_token %}
-    <tr>
-        <td>Coffee name:</td><td><b> {{c.Coffee_name}}</b></td>
-    </tr>
-    <tr>
-        <td>Country name:</td><td><b>{{c.name}}</b></td>
-    </tr>
-    <tr>
-        <td>Coffee Rate per bag in $:</td><td><b>{{c.E_coffeerate}}</b></td>
-    </tr>
-    <tr>
-        <td>Coffee Rate per bag in INR:</td><td><b> {{c.E_rate_in_INR}}</b></td>
-    </tr>
-    <tr>
-        <td>Custom duty charges:</td><td><b> {{c.E_IGST}}</b></td>
-    </tr>  
-    <tr>   
-        <td>Shipping Charges:</td><td><b> {{c.E_shipping_charges}}</b></td>
-    </tr>
-    <tr>   
-        <td>Total charges per bag in INR:</td><td><b> {{c.E_total_charges}}</b></td>
-    </tr>
-    <tr>   
-        <td>No of bags:</td><td> <b>{{nbags}}</b></td>
-    </tr>
-    <tr>   
-        <td>Total Charges for {{nbags}} bags in INR:</td><td><b> {{total}}</b></td>
-    </tr>
-    
-</table>
+    </center>
+    <h2 class ="adj">{{country}}/{{coffee}}</h2>
+    {% for c in exports %}
+    <div class = "adjust">
+        <table class="table table-bordered">
+        {% csrf_token %}
+        <tr>
+            <td>Coffee name:</td><td><b> {{c.Coffee_name}}</b></td>
+        </tr>
+        <tr>
+            <td>Country name:</td><td><b>{{c.name}}</b></td>
+        </tr>
+        <tr>
+            <td>Coffee Rate per bag in $:</td><td><b>{{c.E_coffeerate}}</b></td>
+        </tr>
+        <tr>
+            <td>Coffee Rate per bag in INR:</td><td><b> {{c.E_rate_in_INR}}</b></td>
+        </tr>
+        <tr>
+            <td>Custom duty charges:</td><td><b> {{c.E_IGST}}</b></td>
+        </tr>  
+        <tr>   
+            <td>Shipping Charges:</td><td><b> {{c.E_shipping_charges}}</b></td>
+        </tr>
+        <tr>   
+            <td>Total charges per bag in INR:</td><td><b> {{c.E_total_charges}}</b></td>
+        </tr>
+        <tr>   
+            <td>No of bags:</td><td> <b>{{nbags}}</b></td>
+        </tr>
+        <tr>   
+            <td>Total Charges for {{nbags}} bags in INR:</td><td><b> {{total}}</b></td>
+        </tr>
+    </table>
 </div>
 {% endfor %}
 <div class ="b hidden-print"><center>
-
     <input type="button" class="btn btn-primary" value="Print" onClick="window.print()">
     <a href="http:127.0.0.1:8000/survey/1"><button class="btn btn-success">Feedback</button></a>
     </div></center>
