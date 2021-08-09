@@ -33,7 +33,8 @@ In the database, there exists 4 tables for each of the Coffee beans. The interre
 **3. TOOLS USED:**
 
 DATABASE – SQLite Browser Web Application – HTML5/CSS3/Bootstrap4/JQuery/Python- Django Website - https://www.indiantradeportal.in/ for reference.
-4. EXPECTED RESULTS OF THE STUDY:
+
+**4. EXPECTED RESULTS OF THE STUDY:**
 
 In business trend, the end user must get the best quality coffee from the country of his choice at best possible rate. He must be able to gain instant access to the data provided in the database through a user-friendly interface created as web application.
 
