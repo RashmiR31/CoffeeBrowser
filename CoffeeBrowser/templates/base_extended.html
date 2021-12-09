@@ -75,6 +75,27 @@ li a {
 li a:hover {
   background-color: #111;
 }
+#login{
+  background-color: yellow;
+  color:black;
+  width:100px;
+  height:40px;
+  font-size: 20px;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+
+.design{
+  background-color:#343a40;
+  margin-top:100px;
+  height: 100px;
+  color:white;
+  text-align: center;
+  padding-top: 40px;
+  font-size: 18px;
+  width:100%;
+
+}
 </style>
 
 
@@ -153,7 +174,7 @@ li a:hover {
             }
             </script>
           {% else %}
-            <a class="nav-link" href ="{% url 'account_login' %}"><button class ="btn btn-primary" style="margin-top:-5px">Login</button></a>
+           <a class="nav-link" href ="{% url 'account_login' %}"><button id="login">Login</button></a>
             {% endif %}
           </ul>
       </div>
@@ -164,9 +185,9 @@ li a:hover {
   {% block content %}
   {% endblock %}
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; CoffeeBrowser 2020</p>
+  <footer>
+    <div class="design">
+      <p >Copyright &copy; CoffeeBrowser 2020</p>
     </div>
     <!-- /.container -->
   </footer>

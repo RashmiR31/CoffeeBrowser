@@ -10,7 +10,7 @@ Home
   .dk{
   background-image:url("https://ictcoffee.com/wp-content/uploads/2020/03/great-coffee-bean.jpeg");
   height:300px;
-  width:101.4%;
+  width:100.78%;
   margin-left: -10px;
   margin-top: -20px;
   }
@@ -27,13 +27,76 @@ Home
     font-family:'poppins',sans-serif;
     font-weight:lighter;
     font-size:18px;
-    margin-top:-30px;
     padding-left: 80px;
+  }
+  .part1{
+    width:700px;
+    height:350px;
+    margin-left: 50px;
+    margin-top:20px;
+  }
+  #header{
+    font-family: 'poppins',sans-serif;
+  }
+  #content{
+    font-family:'poppins',sans-serif;
+  }
+  .part2{
+    width:300px;
+    margin-left: 850px;
+    margin-top:-370px;
+   
+  }
+  .design1{
+    margin-top:200px;
+    width:300px;
+    height:400px;
+    margin-left:100px;
+    box-shadow:0px 2px 2px grey;
+
+  }
+  .design2{
+    margin-top:-400px;
+    width:300px;
+    height:400px;
+    margin-left:500px;
+    box-shadow:0px 2px 2px grey;
+
+  }
+  .design3{
+    margin-top:-400px;
+    width:300px;
+    height:400px;
+    margin-left:900px;
+    box-shadow:0px 2px 2px grey;
+
+  }
+  .img1{
+    width:300px;
+  }
+  .cardcontent{
+    font-weight:bolder;
+    padding-left: 20px;
+  }
+  .subcontent{
+    color:grey;
+    padding-left:20px;
+  }
+  .button{
+    padding-left: 20px;
+    margin-top: 20px;
   }
 </style>
 
 <html>
   <!-- Header -->
+  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
   <header class="dk">
     
           <h1 id="header">CoffeeBrowser</h1>
@@ -42,28 +105,28 @@ Home
   </header>
   
 <!-- Page Content -->
-<div class="container wrapper">
-
-    <div class="row">
-      <div class="col-md-8 mb-5">
+<div class="part1">
         <h2>What We Do</h2>
         <hr>
-        <p>Since the import and export business have now become very easy and common, there
+        <p id="content">Since the import and export business have now become very easy and common, there
             still exists certain strict principles to be followed while trying to export or import an
             item. People need to know about the types of coffee beans available to import or
             export and its licenses. In order to not indulge in any unethical trading without the
             knowledge of it. Our team is taking up Coffee beans product and giving the entire
             details related to trading of it.</p>
-        <p>In business trend, the end user must get the best quality coffee from the country of his choice at
+        <p id="content">In business trend, the end user must get the best quality coffee from the country of his choice at
             best possible rate. He must be able to gain instant access to the data provided in the database
             through a user-friendly interface created as web application.</p>
+            <br>
         <a class="btn btn-primary btn-lg" href="{% url 'about' %}">Know more &raquo;</a>
       </div>
-      <div class="col-md-4 mb-5">
+        
+
+      <div class="part2">
         <h2>Contact Us</h2>
         <hr>
         <address>
-          <strong>CoffeeBrowser</strong>
+          <strong id="content">CoffeeBrowser</strong>
           <br>AMC Engineering College
           <br>Karnataka, Bangalore
           <br>
@@ -76,61 +139,53 @@ Home
           <a href="mailto:#">coffeebrowser@importexporttrends.com</a>
         </address>
       </div>
-    </div>
     <!-- /.row -->
 
-    <div class="row">
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="https://dailycoffeenews.com/wp-content/uploads/2017/09/Stratified_line_up_Kenya_Kenya-Kichwa-Tembo-Signature-Coffee_Microlot_Uteuzi-Jimbo-Regional-Select.jpg" alt="">
+    <div class="card design1">
+          <img class="card-img-top img1" src="https://dailycoffeenews.com/wp-content/uploads/2017/09/Stratified_line_up_Kenya_Kenya-Kichwa-Tembo-Signature-Coffee_Microlot_Uteuzi-Jimbo-Regional-Select.jpg" alt="">
           <div class="card-body">
-            <h4 class="card-title">Import</h4>
-            <p class="card-text">Import the best quality coffee from any bestowed country.</p>
+            <h4 class="card-title cardcontent">Import</h4>
+            <p class="card-text subcontent">Import the best quality coffee from any bestowed country.</p>
           </div>
-          <div class="card-footer">
+          <div class="card-footer button">
             {% if user.is_authenticated %}
             <a href="{% url 'imports' %}" class="btn btn-primary">Find Out More!</a>
             {% else %}
             <a href="{% url 'account_login' %}" class="btn btn-danger">Sign in to Find Out More!</a>
             {% endif %}
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
+        </div></div>
+      
+        
+        <div class="card design2">
           <img class="card-img-top" src="https://static.indianexpress.com/m-images/M_Id_260254_coffee_drink.jpg" alt="">
           <div class="card-body">
-            <h4 class="card-title">Export</h4>
-            <p class="card-text">Know about the pricing that costs you while exporting your branded coffee to other countries.</p>
-          </div>
-          <div class="card-footer">
+            <h4 class="card-title cardcontent">Export</h4>
+            <p class="card-text subcontent">Know about the pricing that costs you while exporting your branded coffee to other countries.</p>
+          
+            <div class="card-footer button">
             {% if user.is_authenticated %}
             <a href="{% url 'exports' %}" class="btn btn-primary">Find Out More!</a>
             {% else %}
             <a href="{% url 'account_login' %}" class="btn btn-danger">Sign in to Find Out More!</a>
             {% endif %}
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
+          </div></div></div>
+      
+          <div class="card design3">
           <img class="card-img-top" src="https://www.legalraasta.com/blog/wp-content/uploads/2016/12/trade-license-300x200.jpg" alt="">
           <div class="card-body">
-            <h4 class="card-title">Permissions and Licences</h4>
-            <p class="card-text">Right or Wrong? Questions on licences and permissions answered here.</p>
-          </div>
-          <div class="card-footer">
+            <h4 class="card-title cardcontent">Permissions and Licences</h4>
+            <p class="card-text subcontent">Right or Wrong? Questions on licences and permissions answered here.</p>
+            <div class="card-footer button">
             {% if user.is_authenticated %}
             <a href="https://www.indiacoffee.org/Exporter.aspx" target="_blank" class="btn btn-primary">Find Out More!</a>
             {% else %}
             <a href="{% url 'account_login' %}" class="btn btn-danger">Sign in to Find Out More!</a>
             {% endif %}
-          </div>
-        </div>
-      </div>
-    </div>
+            </div>
+          
     <!-- /.row -->
 
+  </div>
   </div>
   <!-- /.container -->
 {% endblock %}

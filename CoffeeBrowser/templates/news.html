@@ -4,8 +4,8 @@
         width: 100%;
         height:auto;
     }
-    .news{
-        padding-top:10px;
+    #news{
+        margin-top:100px;
         font-size: 50px;
         color:white;
         padding-bottom:10px;
@@ -72,19 +72,15 @@
     }
     </style>
 
-{% block title %}
-News
-{% endblock %}
-{% block active_news %}
-<li class="nav-item active">
-{% endblock %}
+
 <!--NEWS STARTS HERE-->
 <html>
+    <title>News</title>
     <body>
 
 {% block content %}
 <div class= "wrapper">
-<center><h1 class ="news">News</h1></center>
+<center><h1 id="news">News</h1></center>
 {% for article in articles %}
 <h2 class ="heading">{{article.title}}</h2>
 <div class="pic"><img src="{{article.urlToImage}}" alt="Image url" width="250px" height="200px"><br></div>
