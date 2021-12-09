@@ -11,25 +11,42 @@ Exports
     .wrapper{
         width: 100%;
     }
-    .dropdown{
-        padding-left:50px;
+    .dropdown1{
+        font-family: 'poppins',sans-serif;
         font-size:25px;
-        margin-bottom: 20px;
+        margin-top: 70px;
+        }
+    #country{
+        width:250px;
+        color:grey;
+        border-radius:5px;
+
     }
     .dropdown2{
-        padding-left:450px;
+        font-family: 'poppins',sans-serif;
         font-size:25px;
-        margin-top:-65px;
+        margin-top: 70px;  
+    }
+    #coffee_type{
+        width:250px;
+        color:grey;
+        border-radius:5px;
     }
     .dropdown3{
-        padding-left:830px;
+        font-family: 'poppins',sans-serif;
         font-size:25px;
-        margin-top:-50px;
+        margin-top: 70px;  
+    }
+    #bags{
+        width:250px;
+        color:grey;
+        border-radius:5px;
     }
     .go{
-        padding-left:300px;
-        margin-top:-50px;
+       margin-left: 170px;
+       margin-top: 80px;
     }
+    
     .hs{
         padding-top:100px;
         padding-left:40px;
@@ -49,20 +66,21 @@ Exports
     .h3s{
         padding-top:20px;
         padding-left:30px;
-        font-family: Helvetica;
+        font-family: 'poppins',sans-serif;
         font-weight: bold;
-        color:blue;
+        color:black;
     }
     .p2{
         padding-left:30px;
         padding-right:30px;
         font-size: large;
         padding-bottom:20px;
+        font-family: 'poppins',sans-serif;
     }
     .line{
         background-color:black;
         height:0.5px;
-        margin-left:20px;
+        margin-left:280px;
         width:723px;
         margin-top:-19px;
     }
@@ -77,7 +95,7 @@ Exports
         .wrapper{
             width: 360px;
         }
-        .dropdown{
+        .dropdown1{
             padding-left:10px;
             font-size:20px;
         }
@@ -129,6 +147,13 @@ Exports
             display:none;
         }
     }
+    .design{
+        width:500px;
+        height:550px;
+        margin-left:400px;
+        padding-left:50px;
+    }
+    .card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
 </style>
 
 <html>
@@ -157,9 +182,10 @@ Exports
         </head>
         <body>
             <div class = "wrapper">
+                <div class="card design">
                 <form method="GET" action="{% url 'exportsdata' %}">
                     {{ form.valida_desde.errors }}
-                    <div class ="dropdown">
+                    <div class ="dropdown1">
                         <label for="Country">Country:</label>
                         <select name="country" id="country">
                         <option>SELECT</option>
@@ -184,11 +210,11 @@ Exports
                     </div>
                 </form>
             </div>
-
+            </div>
         <!--.................................................................................-->
 
 
-<center><h1 class ="hs">Statistics on Coffee</h1></center>
+<center><h1 class ="hs">Statistics on Coffee</h1>
 <br>
 <div class ="spac">
     <h4>Production in Major States/Districts Of India(in MTs)</h4>
@@ -199,7 +225,7 @@ Exports
     <img src="https://www.comunicaffe.com/wp-content/uploads/2015/01/Coffee-Board-Janaury-2015.jpg" alt="table of production in major states and districts of India">
     <br>
     </div>
-</div>
+</div></center>
 <hr class ="line">
 <div class = "block">
     <h3 class = "h3s" >About Exporting Coffee</h3>

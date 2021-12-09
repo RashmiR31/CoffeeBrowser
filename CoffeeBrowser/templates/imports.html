@@ -8,36 +8,56 @@ Imports
 {% block content %}
 
 <style>
+
+    
     .wrapper{
         width: 100%;
     }
-    .dropdown{
-        padding-left:50px;
+    .dropdown1{
+        font-family: 'poppins',sans-serif;
         font-size:25px;
-        margin-bottom: 20px;
+        margin-top: 70px;
+        }
+    #country{
+        width:250px;
+        color:grey;
+        border-radius:5px;
+
     }
     .dropdown2{
-        padding-left:450px;
+        font-family: 'poppins',sans-serif;
         font-size:25px;
-        margin-top:-65px;    
+        margin-top: 70px;  
+    }
+    #coffee_type{
+        width:250px;
+        color:grey;
+        border-radius:5px;
     }
     .dropdown3{
-        padding-left:830px;
+        font-family: 'poppins',sans-serif;
         font-size:25px;
-        margin-top:-50px;
+        margin-top: 70px;  
+    }
+    #bags{
+        width:250px;
+        color:grey;
+        border-radius:5px;
     }
     .go{
-        padding-left:300px;
-        margin-top:-50px;
+       margin-left: 170px;
+       margin-top: 80px;
     }
-    .h3s{
+    #h3s{
         padding-top:20px;
         padding-left:30px;
-        font-family: Helvetica;
+        font-family: 'poppins',sans-serif;
         font-weight: bold;
-        color:blue;
+        color:black;
+        font-size: 30px;
     }
     .p2{
+        font-family: 'poppins',sans-serif;
         padding-left:30px;
         padding-right:30px;
         font-size: large;
@@ -50,7 +70,7 @@ Imports
     }
     .heading{
         font-size:50px;
-        color:rgb(7, 88, 194);
+        color:rgb(175, 194, 7);
         font-family:Arial, Helvetica, sans-serif;
         margin-top:100px;
     }
@@ -61,7 +81,7 @@ Imports
     .ids1{
         border-width: 1px;
         border-style: solid;
-        border-radius: 10%;
+        border-radius: 20px;
     }
     .img2{
         padding-left:750px;
@@ -70,7 +90,7 @@ Imports
     .ids2{
         border-width: 1px;
         border-style: solid;
-        border-radius: 10%;
+        border-radius: 20px;
     }
     .img3{
         padding-top:70px;
@@ -79,7 +99,7 @@ Imports
     .ids3{
         border-width: 1px;
         border-style: solid;
-        border-radius: 10%;
+        border-radius: 20px;
     }
     .img4{
         margin-top:-245px;
@@ -88,11 +108,13 @@ Imports
     .ids4{
         border-width: 1px;
         border-style: solid;
-        border-radius: 10%;
+        border-radius: 20px;
     }
     .subh{
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: 'poppins',sans-serif;
         font-size:xx-large;
+        padding-left: 100px;
+        margin-top: 10px;
     }
     .dk{
         background-image:url("https://ictcoffee.com/wp-content/uploads/2020/03/great-coffee-bean.jpeg");
@@ -102,7 +124,7 @@ Imports
         .wrapper{
             width: 360px;
         }
-       .dropdown{
+       .dropdown1{
             padding-left:10px;
             font-size:20px;
         }
@@ -172,13 +194,13 @@ Imports
             width:200px;
             height:100px;
         }
-        .h3s{
+        #h3s{
             padding-top:20px;
             padding-left:10px;
-            font-family: Helvetica;
+            font-family: 'poppins',sans-serif;
             font-weight: bold;
-            color:blue;
             font-size:30px;
+            color:black;
         }
         .p2{
             padding-left:10px;
@@ -188,6 +210,20 @@ Imports
             font-size:12px;
         }
     }
+    .design{
+        width:500px;
+        height:550px;
+        margin-left:400px;
+        padding-left:50px;
+    }
+    .card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
+
+    .ids1:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
+    .ids2:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
+    .ids3:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
+    .ids4:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
+
+
 </style>
 <html>
     <!-- Header -->
@@ -214,9 +250,10 @@ Imports
     </head>
     <body>
         <div class ="wrapper">
+            <div class="card design">
             <form method="GET" action="{% url 'submitform' %}">
                 {{ form.valida_desde.errors }}
-                    <div class ="dropdown">
+                    <div class ="dropdown1">
                         <label for="Country">Country:</label>
                         <select name="country" id="country">
                         <option>SELECT</option>
@@ -235,11 +272,12 @@ Imports
                         </select>
                     </div>
                     <div class = "dropdown3">
-                    <label for ="no_of_bags" >No. of Bags</label>
-                    <input  style ="width:100px" type ="number" name="no_of_bags">
+                    <label for ="no_of_bags" >No. of Bags:</label>
+                    <input max="10000"  id="bags" type ="number" name="no_of_bags">
                     <div class = "go"><button type="submit" class="btn btn-primary">GO</button></div>
                     </div>
             </form>
+            </div>
         </div>
         <h3 class ="heading"><center>Types of Coffee</center></h3>
         <div class ="img1">
@@ -264,9 +302,9 @@ Imports
         </div>
             
         <div class = "block">
-            <h3 class = "h3s" >About Importing Coffee</h3>
+            <p id="h3s" >About Importing Coffee</p>
                 <div class = "p2">
-                    <p>   There are 66 distinct countries to import Coffee into India. Collectively India imported 169.26 USD Million of Coffee from those 66 countries in 2019-20 and 168.24 USD Million in 2018, which is down by -5.43% than the Coffee imported into India the previous year. In 2017, 70 countries exported around 82288619 quantity of Coffee to India while in 2018, India’s Coffee import accounts to 89840579 quantity from 70 countries. This shows the rise of 9.18% Coffee import in terms of quantity imported.</p>
+                    <p >   There are 66 distinct countries to import Coffee into India. Collectively India imported 169.26 USD Million of Coffee from those 66 countries in 2019-20 and 168.24 USD Million in 2018, which is down by -5.43% than the Coffee imported into India the previous year. In 2017, 70 countries exported around 82288619 quantity of Coffee to India while in 2018, India’s Coffee import accounts to 89840579 quantity from 70 countries. This shows the rise of 9.18% Coffee import in terms of quantity imported.</p>
                     <p>Overall the import of Coffee into India fall of -7.54% since 2014 when Coffee import shipments into India were valued at 181.959 USD Million. Year over year, the value of Coffee import from India down by -5.43% from 2017 to 2018.</p>
                     <p>The import reached an all time high of 181.959 USD Million during the year 2014.</p>
                 </div>
